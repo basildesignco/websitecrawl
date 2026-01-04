@@ -25,10 +25,9 @@ jobs:
           git remote add upstream https://github.com/PhialsBasement/LibreCrawl.git
           git fetch upstream
           
-          # Merge changes from the original main branch into your main branch
-          # Adjust 'main' if the original repo uses 'master'
+          # Force the merge even if histories are unrelated
           git checkout main
-          git merge upstream/main
+          git merge upstream/main --allow-unrelated-histories -m "Chore: Sync with upstream"
           
           # Push the changes back to your fork
           git push origin main
